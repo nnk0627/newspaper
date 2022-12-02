@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-bold mb-4">Categories</h4>
+                <h4 class="font-weight-bold mb-4">{{__('messages.category')}}</h4>
                 <div class="d-flex flex-wrap m-n1">
 
                     @foreach($categories as $category)
@@ -26,13 +26,13 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-bold mb-4">Tags</h4>
-                <div class="d-flex flex-wrap m-n1">
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Articles</a>
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a>
-                    <a href="" class="btn btn-sm btn-outline-secondary m-1">Weather</a>
+                <h4 class="font-weight-bold mb-4">{{__('messages.tags')}}</h4>
+                <div class="d-flex flex-wrap m-n1 ">
+                @foreach($posts as $post)
+					<a href="" class=" text-white">
+                        <span class="">{{  $post->tags }}</span>
+                    </a>
+				@endforeach
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">

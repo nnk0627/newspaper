@@ -63,7 +63,7 @@ class PageController extends Controller
 
     public function contact()
     {
-        $posts = Post::orderby('id', 'asc')->paginate(6);
+        $posts = Post::orderby('id', 'asc')->limit(4)->get();
         $categories=Category::all();
         $slider = Post::where('slideshow',1)->get();
         // $slider = Slider::where('status',0)->get();

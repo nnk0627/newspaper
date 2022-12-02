@@ -21,6 +21,7 @@ class CategoryTableSeeder extends Seeder
             'Weather'
 
         ];
+        
         foreach($datas as $data){
             $cat = new Category();
             $cat->title = $data;

@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                <h3 class="m-0">Videos</h3>
+                <h3 class="m-0">{{__('messages.video')}}</h3>
             </div>
     <div class="row mb-4">
         <div class="col-md-6">

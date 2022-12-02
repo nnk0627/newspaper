@@ -48,8 +48,8 @@
     <div class="container-fluid">
         <div class="container">
             <nav class="breadcrumb bg-transparent m-0 p-0">
-                <a class="breadcrumb-item" href="{{url('/')}}">Home</a>
-                <a class="breadcrumb-item" href="{{url('blog')}}">Category</a>
+                <a class="breadcrumb-item" href="{{url('/')}}">{{__('messages.home')}}</a>
+                <a class="breadcrumb-item" href="{{url('blog')}}">{{__('messages.category')}}</a>
                 <span class="breadcrumb-item active">{{$category->title}}</span>
             </nav>
         </div>
@@ -66,7 +66,7 @@
                         <div class="col-12">
                             <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
                                 <h3 class="m-0">{{$category->title}}</h3>
-                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="">{{__('messages.viewll')}}</a>
                             </div>
                         </div>
                         @foreach($posts as $post)
@@ -85,8 +85,11 @@
                         </div>
                         @endforeach
                     </div>
-
-                    <div class="row">
+                    <!-- {{-- Pagination --}} -->
+                    <div class="d-flex justify-content-center mt-2">
+                        {!! $posts->links() !!}
+                    </div>
+                    <!-- <div class="row">
                         <div class="col-12">
                             <nav aria-label="Page navigation">
                               <ul class="pagination justify-content-center">
@@ -108,7 +111,7 @@
                               </ul>
                             </nav>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="col-lg-4 pt-3 pt-lg-0">
@@ -172,7 +175,7 @@
                     <!-- Tags Start -->
                     <div class="pb-3">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Tags</h3>
+                            <h3 class="m-0">{{__('messages.tags')}}</h3>
                         </div>
                         <div class="d-flex flex-wrap m-n1">
                             <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>

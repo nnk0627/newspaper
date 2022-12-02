@@ -22,12 +22,18 @@
 // });
 // Auth::routes();
 //  Route::get('/', 'Frontend\PageController@index');
-Route::group(['prefix' => '{locale}'], function() {
-    Route::get('/{$lang}', function () {
-        return view('welcome');
-    })->middleware('setLocale');  
-});
+// Route::group(['prefix' => '{locale}'], function() {
+//     Route::get('/{$lang}', function () {
+//         return view('welcome');
+//     })->middleware('setLocale');  
+// });
 Auth::routes();
+
+
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
 
 Route::get('/', 'Frontend\PageController@index');
 

@@ -6,7 +6,7 @@
         <div class="container">
             <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
                 <h3 class="m-0">Featured</h3>
-                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
+                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">{{__('messages.viewll')}}</a>
             </div>
             <div class="owl-carousel owl-carousel-2 carousel-item-4 position-relative">
                 @foreach($posts as $post)
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Politics</h3>
+                        <h3 class="m-0">{{__('messages.politics')}}</h3>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                     @foreach($politicsposts as $post)
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Business</h3>
+                        <h3 class="m-0">{{__('messages.business')}}</h3>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                     @foreach($businessposts as $post)
@@ -82,7 +82,7 @@
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Articles</h3>
+                        <h3 class="m-0">{{__('messages.articles')}}</h3>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                     @foreach($articlesposts as $post)
@@ -102,7 +102,7 @@
                 </div>
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">LifeStyle</h3>
+                        <h3 class="m-0">{{__('messages.lifestyle')}}</h3>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                         @foreach($lifestyleposts as $post)
@@ -128,7 +128,7 @@
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Weather</h3>
+                        <h3 class="m-0">{{__('messages.weather')}}</h3>
                     </div>
                     <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
                     @foreach($weatherposts as $post)
@@ -146,7 +146,26 @@
                         @endforeach
                     </div>
                 </div>
-                
+                <div class="col-lg-6 py-3">
+                    <div class="bg-light py-2 px-4 mb-3">
+                        <h3 class="m-0">{{__('messages.interviews')}}</h3>
+                    </div>
+                    <div class="owl-carousel owl-carousel-3 carousel-item-2 position-relative">
+                        @foreach($interviewsposts as $post)
+                        <div class="position-relative">
+                            <img class="img-fluid w-100" src="{{ asset('images/blogimg/' . $post->images) }}" style="width: 300px; height: 160px; object-fit: cover;">
+                            <div class="overlay position-relative bg-light">
+                                <div class="mb-2" style="font-size: 13px;">
+                                    <a href="">{{$post->category->title}}</a>
+                                    <span class="px-1">/</span>
+                                    <span>{{$post->date}}</span>
+                                </div>
+                                <a class="h6 m-0" href="{{ url("post/$post->id") }}" style="height: 60px;">{{$post->title}}</a>
+                            </div>
+                        </div>
+                        @endforeach  
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -162,7 +181,7 @@
                         <div class="col-12">
                             <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
                                 <h3 class="m-0">Popular</h3>
-                                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">{{__('messages.viewll')}}</a>
                             </div>
                         </div>
                         @foreach ($posts as $post)
@@ -204,8 +223,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                                <h3 class="m-0">Latest</h3>
-                                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">View All</a>
+                                <h3 class="m-0">{{__('messages.latest')}}</h3>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="{{url('blog')}}">{{__('messages.viewll')}}</a>
                             </div>
                         </div>
                         @foreach ($latestposts as $post)
@@ -307,7 +326,7 @@
                     <!-- Tags Start -->
                     <div class="pb-3">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Tags</h3>
+                            <h3 class="m-0">{{__('messages.tags')}}</h3>
                         </div>
                         <div class="d-flex flex-wrap m-n1">
                         <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>

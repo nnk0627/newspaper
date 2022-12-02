@@ -46,7 +46,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="{{url('/')}}" class="nav-item nav-link active">Home</a>
+                    <a href="{{url('/')}}" class="nav-item nav-link active">{{__('messages.home')}}</a>
                    
                     @foreach($categories as $category)     
                         <a href="{{route('family',$category->id)}}" class="nav-item nav-link">
@@ -54,16 +54,19 @@
                         </a>
                         
                     @endforeach
-                    <a href="{{url('contact-us')}}" class="nav-item nav-link">Contact</a>
-                    <a href="{{url('video')}}" class="nav-item nav-link">Videos</a>
+                    
+                    <a href="{{url('contact-us')}}" class="nav-item nav-link">{{__('messages.contact')}}</a>
+                    <a href="{{url('video')}}" class="nav-item nav-link">{{__('messages.video')}}</a>
                 </div>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ app()->getLocale() == 'en'? 'English' : 'Myanmar'}}
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ url( app()->getLocale() == 'en' ? 'mm':'en' )}}">{{ app()->getLocale() == 'en' ? 'Myanmar':'English'}}</a></a>
-                    </div>
+                <div  class="row" id="leaderboard">              
+                    <div class="container">                       
+                            <div id="topbar" class="col-12 text-right">
+                                <ul>                                   
+                                    <li><a href="{{ url('locale/en') }}">ENG</a></li>
+                                    <li><a href="{{ url('locale/my') }}">မြန်မာ</a></li>
+                                </ul>   
+                            </div>  
+                        </div>
                 </div>
             
             </div>
@@ -72,7 +75,7 @@
                         <div class="input-group ml-auto" >
                             <input type="text" class="form-control" placeholder="Keyword" name="search" >
                             <div class="input-group-append">
-                                <button class="input-group-text text-secondary" type="submit"><i
+                                <button class="input-group-text text-primary" type="submit"><i
                                         class="fa fa-search"></i></button>
                             </div>
                         </div>

@@ -25,7 +25,11 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="row">
+                <!-- {{-- Pagination --}} -->
+                    <div class="d-flex justify-content-center mt-2">
+                        {!! $blogposts->links() !!}
+                    </div>
+                <!-- <div class="row">
                         <div class="col-12">
                             <nav aria-label="Page navigation">
                               <ul class="pagination justify-content-center">
@@ -47,10 +51,10 @@
                               </ul>
                             </nav>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- </div>     -->
             </div>
-
+            
             <div class="col-lg-4 pt-3 pt-lg-0">
                     <!-- Social Follow Start -->
                     <div class="pb-3">
@@ -108,7 +112,7 @@
                     <!-- Tags Start -->
                     <div class="pb-3">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Tags</h3>
+                            <h3 class="m-0">{{__('messages.tags')}}</h3>
                         </div>
                         <div class="d-flex flex-wrap m-n1">
                             <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
@@ -124,7 +128,7 @@
     </div>
 </div>
     <!-- News With Sidebar End -->
-
+    
 <!-- Back to Top -->
 <a href="#" class="btn btn-dark back-to-top"><i class="fa fa-angle-up"></i></a>
 

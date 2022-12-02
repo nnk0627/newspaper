@@ -51,8 +51,8 @@
     <div class="container-fluid">
         <div class="container">
             <nav class="breadcrumb bg-transparent m-0 p-0">
-                <a class="breadcrumb-item" href="{{url('/')}}">Home</a>
-                <a class="breadcrumb-item" href="{{url('blog')}}">Category</a>
+                <a class="breadcrumb-item" href="{{url('/')}}">{{__('messages.home')}}</a>
+                <a class="breadcrumb-item" href="{{url('blog')}}">{{__('messages.category')}}</a>
                 <a class="breadcrumb-item">{{ $post->category->title }}</a>
                 <!-- <span class="breadcrumb-item active">{{ $post->title }}</span> -->
             </nav>
@@ -148,7 +148,7 @@
                     <!-- Tags Start -->
                     <div class="pb-3">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Tags</h3>
+                            <h3 class="m-0">{{__('messages.tags')}}</h3>
                         </div>
                         <div class="d-flex flex-wrap m-n1">
                             <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
